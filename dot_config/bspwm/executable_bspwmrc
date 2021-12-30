@@ -1,0 +1,58 @@
+#! /bin/bash
+
+if [[ $(hostname) == 'Nostromo' ]]; then
+    bspc monitor DisplayPort-0 -d 1 2
+    bspc monitor HDMI-A-0 -d 3 4
+    bspc monitor DVI-D-0 -d 5 6
+    bspc rule -a Brave-browser desktop=^3
+    bspc rule -a "privateinternetaccess:*:Private Internet Access" state=floating private=on manage=on center=false rectangle=300x1080+3539+0 desktop=^5
+    bspc rule -a Droidcam state=tiled desktop=^5
+    bspc config -d 5 right_padding 301
+elif [[ $(hostname) == 'cellaris' ]]; then
+    bspc monitor HDMI-0 -d 1 2 3 4
+    bspc rule -a Brave-browser desktop=^1
+elif [[ $(hostname) == 'sevastopol' ]]; then
+    bspc monitor eDP1 -d 1 2
+    bspc monitor HDMI1 -d 3 4
+    bspc monitor DP1 -d 5 6
+    bspc rule -a Brave-browser desktop=^3
+fi
+
+# bspc config external_rules_command /home/julius/.config/bspwm/external_rules
+
+bspc rule -a antimicrox state=floating
+bspc rule -a Droidcam state=tiled
+bspc rule -a Emacs state=tiled
+bspc rule -a zoom layer=normal
+# bspc rule -a zoom state=tiled layer=normal
+bspc rule -a pavucontrol-qt state=tiled
+bspc rule -a Screenkey manage=off
+bspc rule -a Zathura state=tiled
+bspc rule -a flowers.exe layer=normal
+
+bspc config pointer_follows_monitor true
+bspc config swallow_first_click true
+bspc config single_monocle true
+bspc config focus_follows_pointer true
+
+bspc config border_width 0
+bspc config window_gap 0
+bspc desktop --layout monocle
+bspc desktop 3 --layout monocle
+# bspc config split_ratio          0.52
+bspc config borderless_monocle true
+bspc config gapless_monocle true
+bspc config ignore_ewmh_focus true
+wmname LG3D
+
+kitty &
+net.ankiweb.Anki &
+emote &
+# /opt/piavpn/bin/pia-client &
+# /home/julius/Programs/position_pia.sh &
+
+# xkeysnail --watch ~/.config/xkeysnail/config.py 2>&1 | tee /tmp/xkeysnail.log &
+sleep 10 && \
+    test $(hostname) == "mobilus" && \
+    noisetorch -i alsa_input.pci-0000_00_1f.3.analog-stereo ||
+    noisetorch -i alsa_input.usb-MICE_MICROPHONE_USB_MICROPHONE_201308-00.mono-fallback &

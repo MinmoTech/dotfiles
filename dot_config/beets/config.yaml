@@ -1,0 +1,27 @@
+directory: /rclone/Audio/Vocaloid
+library: /rclone/Audio/libraries/musiclibrary.db
+import:
+    move: yes
+pluginpath:
+    - ~/Programs/beets-vocadb/
+    - ~/Programs/VGMdb-BeetsPlug/beetsplug
+    - ~/Programs/beets-fetchartist/
+plugins: edit fetchart convert  vocadb
+edit:
+    itemfields: track title artist album albumartist
+paths:
+    default: $albumartist/$album%aunique{}/$track $title
+    singleton: Non-Album/$artist/$title
+    comp: $albumartist/$album%aunique{}/$track $title
+languages: en
+
+convert:
+    auto: yes
+    dest: /hdd/Audio/temp/
+    format: opus
+    never_convert_lossy_files: yes
+    no_convert: format:mp3
+    formats:
+        opus:
+            command: ffmpeg -i $source -y -vn -acodec libopus -ab 128k $dest
+            extension: opus
