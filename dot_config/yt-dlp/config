@@ -1,0 +1,11 @@
+# --external-downloader aria2c
+# --external-downloader-args '-c -j 6 -x 3 -s 3 -k 10M --retry-wait=2'
+--cookies /home/julius/.config/yt-dlp/cookies.txt
+# -o '%(playlist_index)s - %(title)s-%(id)s.%(ext)s'
+# --embed-thumbnail
+# --add-metadata
+# --format-sort "+vcodec:avc"
+# --sub-lang jpn,ja,en,de
+# --merge-output-format mp4
+# --embed-subs
+# --write-auto-sub

@@ -1,0 +1,5 @@
+# [terraform]
+# show_version = true
+
+[character]
+error_symbol = "✗"
