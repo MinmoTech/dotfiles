@@ -1,0 +1,19 @@
+source ~/.config/nvim/init.vim
+set commentary
+set highlightedyank
+let mapleader = " "
+inoremap <BS> <BS>
+inoremap <C-H> <C-H>
+inoremap <CR> <CR>
+inoremap <C-M> <CR>
+
+vnoremap cp "+y
+nnoremap cp "+y
+
+
+nnoremap <leader>f :action SearchEverywhere<CR>
+nnoremap <leader>rn :action RenameElement<CR>
+nnoremap <leader>p :action ParameterInfo<CR>
+nnoremap <leader>h :action ContextHelp<CR>
+nnoremap gd :action GotoDeclaration<CR>
+nnoremap <leader>i :action GotoImplementation<CR>
