@@ -110,6 +110,7 @@ au BufRead,BufNewFile *.kbd set filetype=lisp
 " don't keep files for secrets
 au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
 
+autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path "%"
 
 " don't fuck with pasting
 set pastetoggle=<C-A-v>
