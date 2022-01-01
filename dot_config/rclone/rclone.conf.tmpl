@@ -1,0 +1,17 @@
+[gsuite]
+type = drive
+client_id = {{ gopass "keys/rclone/client_id" }}
+client_secret = {{ gopass "keys/rclone/client_secret" }}
+scope = drive
+token = {"access_token":"{{ gopass "keys/rclone/access_token" }}","token_type":"Bearer","refresh_token":"{{ gopass "keys/rclone/refresh_token" }}","expiry":"2020-11-13T18:13:51.124891547+01:00"}
+root_folder_id = 0AEg-BbDMtKyQUk9PVA
+
+[secret]
+type = crypt
+remote = gsuite:media
+filename_encryption = standard
+directory_name_encryption = true
+password = {{ gopass "keys/rclone/password" }}
+password2 = {{ gopass "keys/rclone/password2" }}
+
+
