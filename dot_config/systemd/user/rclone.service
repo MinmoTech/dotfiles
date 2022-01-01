@@ -1,0 +1,32 @@
+[Unit]
+Description=RClone Service
+Wants=network-online.target
+After=network-online.target
+
+[Service]
+Type=notify
+Environment=RCLONE_CONFIG=/home/julius/.config/rclone/rclone.conf
+SendSIGKILL=no
+RestartSec=5
+ExecStart=/usr/bin/rclone mount secret: /rclone \
+--allow-other \
+--bwlimit 1M:9M \
+--dir-cache-time 1000h \
+--log-level INFO \
+--poll-interval 25s \
+--cache-dir=/Cache \
+--vfs-cache-mode full \
+--rc \
+--log-level INFO \
+--log-file /opt/rclone/logs/rclone.log \
+--rc-addr :5572 \
+--rc-no-auth \
+--vfs-cache-max-size 900G \
+--vfs-cache-max-age 336h \
+--buffer-size 600M
+ExecStop=/bin/fusermount -uz /rclone
+ExecStartPost=/usr/bin/rclone rc vfs/refresh recursive=true --rc-addr 127.0.0.1:5572 _async=true
+Restart=on-failure
+
+[Install]
+WantedBy=default.target
