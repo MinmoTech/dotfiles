@@ -6,7 +6,7 @@ SETUVAR PAGER:nvim\x20\x2bMAN\x21
 SETUVAR --export PYENV_ROOT:/home/julius/\x2epyenv
 SETUVAR VISUAL:nvim
 SETUVAR __fish_initialized:3100
-SETUVAR _fish_abbr_bspwmrc:nvim\x20\x7e/\x2econfig/bspwm/bspwmrc
+SETUVAR _fish_abbr_bspwmrc:chezmoi\x20edit\x20\x7e/\x2econfig/bspwm/bspwmrc
 SETUVAR _fish_abbr_cdd:cd\x20\x7e/Downloads
 SETUVAR _fish_abbr_cdp:cd\x20\x7e/Projects
 SETUVAR _fish_abbr_cp:cp\x20\x2driv
@@ -24,11 +24,11 @@ SETUVAR _fish_abbr_ssc:ssh\x20173\x2e212\x2e244\x2e131\x20\x2dt\x20byobu
 SETUVAR _fish_abbr_ssp:ssh\x20\x2dYC\x20Cellaris\x20\x2dt\x20byobu\x20\x7c\x7c\x20ssh\x20\x2dYC\x20plexiglas\x2exyz\x20\x2dt\x20byobu
 SETUVAR _fish_abbr_ssr:ssh\x20raspberry\x20\x2dt\x20byobu
 SETUVAR _fish_abbr_strace:strace\x20\x2df\x20\x2dy
-SETUVAR _fish_abbr_sxhkdrc:nvim\x20\x7e/\x2econfig/sxhkd/sxhkdrc
+SETUVAR _fish_abbr_sxhkdrc:chezmoi\x20edit\x20\x7e/\x2econfig/sxhkd/sxhkdrc
 SETUVAR _fish_abbr_t:terraform
 SETUVAR _fish_abbr_tg:terragrunt
 SETUVAR _fish_abbr_update:sudo\x20pacman\x20\x2dSy\x20\x26\x26\x20sudo\x20powerpill\x20\x2dSu\x20\x26\x26\x20yay\x20\x2dSu
-SETUVAR _fish_abbr_vimrc:nvim\x20\x7e/\x2econfig/nvim/init\x2evim
+SETUVAR _fish_abbr_vimrc:chezmoi\x20edit\x20\x7e/\x2econfig/nvim/init\x2evim
 SETUVAR _fish_abbr_ys:yadm\x20status
 SETUVAR _fish_abbr_zshrc:nvim\x20\x7e/\x2ezshrc
 SETUVAR _fisher_evanlucas_2F_fish_2D_kubectl_2D_completions_files:/home/julius/\x2econfig/fish/completions/kubectl\x2efish
