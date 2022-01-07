@@ -11,17 +11,17 @@ local options = {
     python_path = ON_WINDOWS and "python" or "python3",
 
     -- Categories to fetch
-    categories = "sponsor,intro,outro,interaction,selfpromo",
+    categories = "sponsor,intro,outro,interaction,selfpromo,preview,music_offtopic",
 
     -- Categories to skip automatically
-    skip_categories = "sponsor,intro,outro,interaction,selfpromo,music_offtopic",
+    skip_categories = "sponsor,intro,outro,interaction,selfpromo,preview,music_offtopic",
 
     -- If true, sponsored segments will only be skipped once
     skip_once = true,
 
     -- Note that sponsored segments may ocasionally be inaccurate if this is turned off
     -- see https://blog.ajay.app/voting-and-pseudo-randomness-or-sponsorblock-or-youtube-sponsorship-segment-blocker
-    local_database = true,
+    local_database = false,
 
     -- Update database on first run, does nothing if local_database is false
     auto_update = true,
@@ -105,7 +105,7 @@ local fade_timer = nil
 local fade_dir = nil
 local volume_before = mp.get_property_number("volume")
 local categories = {}
-local all_categories = {"sponsor", "intro", "outro", "interaction", "selfpromo", "music_offtopic"}
+local all_categories = {"sponsor", "intro", "outro", "interaction", "selfpromo", "preview", "music_offtopic"}
 local chapter_cache = {}
 
 for category in string.gmatch(options.skip_categories, "([^,]+)") do
