@@ -4,4 +4,4 @@ local function showChapterTitle()
     mp.osd_message(chapterTitle, 10)
 end
 
-mp.observe_property("chapter", nil, showChapterTitle)
+-- mp.observe_property("chapter", nil, showChapterTitle)
