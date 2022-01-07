@@ -331,9 +331,6 @@ imap <C-d> <Del>
 " Dedent with C-M-d instead
 inoremap <C-S-d> <C-d>
 
-vnoremap p "0p
-vnoremap P "0P
-
 nnoremap <Leader>l :lua vim.lsp.buf.formatting()<CR>
 nmap <leader>i :wa<CR>
 
