@@ -52,7 +52,10 @@ emote &
 # /home/julius/Programs/position_pia.sh &
 
 # xkeysnail --watch ~/.config/xkeysnail/config.py 2>&1 | tee /tmp/xkeysnail.log &
-sleep 10 && \
-    test $(hostname) == "mobilus" && \
-    noisetorch -i alsa_input.pci-0000_00_1f.3.analog-stereo ||
-    noisetorch -i alsa_input.usb-MICE_MICROPHONE_USB_MICROPHONE_201308-00.mono-fallback &
+sleep 10s && \
+    if [[ $(hostname) == "mobilus" ]]
+    then
+        noisetorch -i alsa_input.pci-0000_00_1f.3.analog-stereo &
+    else
+        noisetorch -i alsa_input.usb-MICE_MICROPHONE_USB_MICROPHONE_201308-00.mono-fallback &
+    fi
