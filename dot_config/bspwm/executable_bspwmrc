@@ -9,7 +9,8 @@ if [[ $(hostname) == 'Nostromo' ]]; then
     bspc rule -a Droidcam state=tiled desktop=^5
     bspc config -d 5 right_padding 301
 elif [[ $(hostname) == 'cellaris' ]]; then
-    bspc monitor HDMI-0 -d 1 2 3 4
+    bspc monitor HDMI-0 -d 1 2 5
+    bspc monitor DP-2 -d 3 4
     bspc rule -a Brave-browser desktop=^1
 elif [[ $(hostname) == 'sevastopol' ]]; then
     bspc monitor eDP1 -d 1 2
