@@ -295,6 +295,8 @@ super + z
 	~/Programs/translate.py
 super + x
 	~/Programs/clip_translate.sh
+super + shift + x
+	~/Programs/selection_to_clipboard_audio.sh
 ctrl + alt + c
 	~/Programs/clip_translate.sh
 super + alt + z
