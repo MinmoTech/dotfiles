@@ -134,6 +134,9 @@ highlight Search ctermfg=0
 " }}}
 " Plugin Configuration {{{
 lua << EOF
+
+require("scrollbar").setup()
+
 local null_ls = require("null-ls")
 
 -- register any number of sources simultaneously
