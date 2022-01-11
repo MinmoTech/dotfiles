@@ -294,7 +294,7 @@ KP_Enter
 super + z
 	~/Programs/translate.py
 super + alt + b
-	deep-translator translate -src en -tgt de -txt (xclip -o)
+	deep-translator translate -src en -tgt de -txt (xclip -o) linguee
 super + x
 	~/Programs/clip_translate.sh
 ctrl + alt + x
