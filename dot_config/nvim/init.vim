@@ -160,7 +160,6 @@ local sources = {
 
 null_ls.setup({ sources = sources })
 require("null-ls").setup({
-    debug = true
 })
 
 require("trouble").setup {
