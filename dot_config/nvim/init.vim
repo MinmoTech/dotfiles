@@ -32,7 +32,7 @@ Plug 'jeetsukumaran/vim-pythonsense' " Add python text objects: ac (around class
 Plug 'pechorin/any-jump.nvim' " Use regex to 'go to definition' anywhere (<leader>j)
 Plug 'rbgrouleff/bclose.vim' " Dependency of ranger.vim
 Plug 'francoiscabrol/ranger.vim' " Use ranger inside of vim
-Plug 'unblevable/quick-scope' " Improve f key
+" Plug 'unblevable/quick-scope' " Improve f key
 Plug 'machakann/vim-highlightedyank' " highlight yanked text
 " Plug 'christianrondeau/vim-base64' " Encodes/decodes base64 strings
 " Plug 'artur-shaik/vim-javacomplete2'
@@ -65,6 +65,7 @@ Plug 'folke/trouble.nvim'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'petertriho/nvim-scrollbar'
 Plug 'dpelle/vim-LanguageTool'
+Plug 'ggandor/lightspeed.nvim'
 
 " Plug 'mfussenegger/nvim-dap'
 " Plug 'Pocco81/DAPInstall.nvim'
