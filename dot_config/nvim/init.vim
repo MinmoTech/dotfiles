@@ -64,6 +64,7 @@ Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend upda
 Plug 'folke/trouble.nvim'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'petertriho/nvim-scrollbar'
+Plug 'dpelle/vim-LanguageTool'
 
 " Plug 'mfussenegger/nvim-dap'
 " Plug 'Pocco81/DAPInstall.nvim'
@@ -133,6 +134,8 @@ set termguicolors
 highlight Search ctermfg=0
 " }}}
 " Plugin Configuration {{{
+
+let g:languagetool_jar = '/usr/share/java/languagetool/languagetool-commandline.jar'
 lua << EOF
 
 require("scrollbar").setup()
