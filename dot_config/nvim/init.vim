@@ -11,7 +11,7 @@ Plug 'tpope/vim-repeat' " make surround actions repeatable
 Plug 'kdheepak/lazygit.nvim'
 Plug 'rhysd/git-messenger.vim' " <leader>gm show last git commit for current line (similar to gitlens)
 Plug 'tpope/vim-sleuth' " Autodetect indentation rules
-Plug 'tpope/vim-commentary' " Comment stuff
+Plug 'numToStr/Comment.nvim' " Comment stuff
 Plug 'tpope/vim-abolish' " crs > convert to snake case
 Plug 'christoomey/vim-system-copy' " cpit > this copies the content of a tag into your clipboard
 Plug 'vim-airline/vim-airline' " shows buffers for files
