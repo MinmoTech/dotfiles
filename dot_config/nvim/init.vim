@@ -138,7 +138,7 @@ highlight Search ctermfg=0
 
 let g:languagetool_jar = '/usr/share/java/languagetool/languagetool-commandline.jar'
 lua << EOF
-lua require('Comment').setup()
+require('Comment').setup()
 
 
 require("scrollbar").setup()
