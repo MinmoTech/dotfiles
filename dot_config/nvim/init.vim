@@ -37,7 +37,7 @@ Plug 'machakann/vim-highlightedyank' " highlight yanked text
 Plug 'vim-scripts/ReplaceWithRegister'
 " Plug 'christianrondeau/vim-base64' " Encodes/decodes base64 strings
 " Plug 'artur-shaik/vim-javacomplete2'
-Plug 'jremmen/vim-ReplaceWithRegister'
+Plug 'jremmen/vim-ripgrep'
 Plug 'dhruvasagar/vim-table-mode'
 Plug 'godlygeek/tabular'
 Plug 'kevinhwang91/nvim-bqf'
