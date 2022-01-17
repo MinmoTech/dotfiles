@@ -34,6 +34,7 @@ Plug 'rbgrouleff/bclose.vim' " Dependency of ranger.vim
 Plug 'francoiscabrol/ranger.vim' " Use ranger inside of vim
 " Plug 'unblevable/quick-scope' " Improve f key
 Plug 'machakann/vim-highlightedyank' " highlight yanked text
+Plug 'vim-scripts/ReplaceWithRegister'
 " Plug 'christianrondeau/vim-base64' " Encodes/decodes base64 strings
 " Plug 'artur-shaik/vim-javacomplete2'
 Plug 'jremmen/vim-ripgrep'
