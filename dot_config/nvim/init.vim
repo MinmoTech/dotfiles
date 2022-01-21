@@ -35,6 +35,7 @@ Plug 'francoiscabrol/ranger.vim' " Use ranger inside of vim
 " Plug 'unblevable/quick-scope' " Improve f key
 Plug 'machakann/vim-highlightedyank' " highlight yanked text
 Plug 'vim-scripts/ReplaceWithRegister' " <gr>motion replaces text with register
+Plug 'Matt-A-Bennett/vim-surround-funk' " <dsf> delete sourrounding fuction, <gs> wrap current fuction with the one in register
 " Plug 'christianrondeau/vim-base64' " Encodes/decodes base64 strings
 " Plug 'artur-shaik/vim-javacomplete2'
 Plug 'jremmen/vim-ripgrep'
