@@ -112,7 +112,7 @@ super + {Left,Down,Up,Right}
 
 # Basic binds
 super + Return
-	jumpapp kitty
+	jumpapp kitty || wmctrl -a kitty
 super + d
 	rofi -show run -monitor -1
 super + b
@@ -138,19 +138,17 @@ XF86Favorites
 super + F2
 	~/Programs/tablet.sh
 super + a
-	jumpapp -c "anki" net.ankiweb.Anki
+	jumpapp -c "anki" net.ankiweb.Anki || wmctrl -a anki
 super + n
 	jumpapp libreoffice
 super + c
-	jumpapp -c "Brave-browser" com.brave.Browser
+	jumpapp -c "Brave-browser" com.brave.Browser || wmctrl -a brave
 super + alt + c
 	jumpapp firefox
 super + shift + c
-    jumpapp -c "Chromium-browser" com.github.Eloston.UngoogledChromium
+    jumpapp -c "Chromium-browser" com.github.Eloston.UngoogledChromium || wmctrl -a chromium
 super + v
-	jumpapp discord || flatpak run com.discordapp.Discord
-super + e
-	jumpapp zoom
+	jumpapp discord || wmctrl -a discord || flatpak run com.discordapp.Discord
 super + y
 	echo "Julius.Dehner" | xclip -sel clip
 super + shift + y
@@ -211,16 +209,10 @@ button10
 button12
 	xdotool key 1
 
-super + h
-	jumpapp -f slack
-super + p
-	jumpapp -f -c "Toggl Desktop" TogglDesktop
 super + k
 	jumpapp -f zoom
-super + l
-	jumpapp sxiv
 super + q
-	jumpapp mpv
+	jumpapp mpv || wmctrl -a mpv
 XF86Launch6
 	jumpapp -f TogglDesktop
 
