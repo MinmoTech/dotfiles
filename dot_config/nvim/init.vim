@@ -28,7 +28,7 @@ Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
 Plug 'ku-s-h/summerfruit256.vim'
 Plug 'kana/vim-textobj-user' " Add new textobjects easily
 Plug 'wellle/targets.vim' " more text objects, enables stuff like ci, or ci/
-Plug 'jeetsukumaran/vim-pythonsense' " Add python text objects: ac (around class), ic, af, if (inner function)
+" Plug 'jeetsukumaran/vim-pythonsense' " Add python text objects: ac (around class), ic, af, if (inner function)
 Plug 'pechorin/any-jump.nvim' " Use regex to 'go to definition' anywhere (<leader>j)
 Plug 'rbgrouleff/bclose.vim' " Dependency of ranger.vim
 Plug 'francoiscabrol/ranger.vim' " Use ranger inside of vim
