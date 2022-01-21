@@ -112,7 +112,7 @@ super + {Left,Down,Up,Right}
 
 # Basic binds
 super + Return
-	jumpapp kitty || wmctrl -a kitty
+	jumpapp kitty || xdotool search --class kitty windowactivate
 super + d
 	rofi -show run -monitor -1
 super + b
