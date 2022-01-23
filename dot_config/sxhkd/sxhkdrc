@@ -199,7 +199,7 @@ super + shift + F6
 	sudo pkill xkeysnail
 
 super + r
-	jumpapp com.github.xournalpp.xournalpp
+	jumpapp -c Xournalpp com.github.xournalpp.xournalpp
 button13
 	jumpapp com.github.xournalpp.xournalpp
 button11
