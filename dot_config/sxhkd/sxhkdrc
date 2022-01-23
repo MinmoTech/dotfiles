@@ -199,9 +199,9 @@ super + shift + F6
 	sudo pkill xkeysnail
 
 super + r
-	jumpapp xournalpp
+	jumpapp com.github.xournalpp.xournalpp
 button13
-	jumpapp xournalpp
+	jumpapp com.github.xournalpp.xournalpp
 button11
 	jumpapp anki
 button10
@@ -314,8 +314,7 @@ super + F7
 
 # Pulse Audio controls
 XF86AudioRaiseVolume
-    pulsemixer --change-volume +5
-	# ~/Programs/volume_up.sh
+    ~/Programs/volume_up.sh
 XF86AudioLowerVolume
     pulsemixer --change-volume -5
 XF86AudioMute
