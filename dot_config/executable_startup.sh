@@ -6,7 +6,8 @@ clipmenud &
 keynav &
 # picom --backend glx --daemon --vsync --no-fading-openclose --use-ewmh-active-win
 # picom --backend xr_glx_hybrid --daemon --shadow --vsync --no-fading-openclose --use-ewmh-active-win --vsync-use-glfinish --unredir-if-possible
-picom --backend glx --daemon --vsync --no-fading-openclose --use-ewmh-active-win --vsync-use-glfinish --unredir-if-possible
+# picom --backend glx --daemon --vsync --no-fading-openclose --use-ewmh-active-win --vsync-use-glfinish --unredir-if-possible
+picom --daemon --no-fading-openclose &
 feh --randomize --bg-fill --no-xinerama ~/Pictures/wallpapers/* &
 # ~/Programs/notify-low-battery.sh &
 # nextcloud &
