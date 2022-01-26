@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 from concurrent.futures.thread import ThreadPoolExecutor
 from io import BytesIO
+import re
 
 import pykakasi
 import pyperclip
@@ -34,6 +35,10 @@ def translate(text):
     return translated
 
 
+def google_translate(text):
+    return GoogleTranslator(source="ja", target="en").translate(text=text)
+
+
 def convert_to_hiragana(text):
     kks = pykakasi.kakasi()
     result = kks.convert(text)
@@ -43,12 +48,26 @@ def convert_to_hiragana(text):
     return result_str
 
 
+def clean_text(text):
+    text = text.strip()
+    text = re.sub(r"\[.*?\]", "", text)
+    text = re.sub(r"\{.*?\}", "", text)
+    text = re.sub(r"（.*?）", "", text)
+    text = text.replace("\n", "")
+    text = text.replace(" ", "")
+    return text
+
+
+text = clean_text(text)
 with ThreadPoolExecutor(max_workers=5) as executor:
     hiragana_thread = executor.submit(convert_to_hiragana, (text))
     translate_thread = executor.submit(translate, (text))
+    google_translate_thread = executor.submit(google_translate, (text))
     audio_thread = executor.submit(speak_audio, (text))
 hiragana = hiragana_thread.result(7)
 translation = translate_thread.result(7)
+pyperclip.copy(translation)
+google_translation = google_translate_thread.result(7)
 
 final_text = f"{hiragana}\n{translation}"
 
