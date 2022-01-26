@@ -5,7 +5,7 @@ import re
 
 import pykakasi
 import pyperclip
-from deep_translator import DeepL
+from deep_translator import DeepL, GoogleTranslator
 from gtts import gTTS
 from notifypy import Notify
 from pydub import AudioSegment
@@ -69,7 +69,7 @@ translation = translate_thread.result(7)
 pyperclip.copy(translation)
 google_translation = google_translate_thread.result(7)
 
-final_text = f"{hiragana}\n{translation}"
+final_text = f"{hiragana}\n{translation}\n{google_translation}"
 
 notification = Notify()
 notification.title = text
