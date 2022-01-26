@@ -22,6 +22,7 @@ fi
 # bspc config external_rules_command /home/julius/.config/bspwm/external_rules
 
 bspc rule -a antimicrox state=floating
+bspc rule -a ocr_tool.py center=false
 bspc rule -a Droidcam state=tiled
 bspc rule -a Emacs state=tiled
 bspc rule -a zoom layer=normal
