@@ -149,11 +149,11 @@ class ChaptersFromTimestampsPP(PostProcessor):
 
 if __name__ == "__main__":
     # more comments increase download time
-    max_comments = 300
+    max_comments = 500
     # setting to 2 makes it inspect comment replies too, increases download time significantly
     # you should increase max_comments if setting this to "2",
     # as on some videos the first comment has many hundreds of replies
-    comment_depth = 1
+    max_replies_per_thread = 5
     # in mp4 files the first chapter will always start at 0:00, so if mp4 is chosen as output_format,
     # a dummy chapter will be added at the start titled "-"
     output_format = "mkv"
@@ -170,8 +170,7 @@ if __name__ == "__main__":
         "subtitleslangs": ["jpn", "ja", "en", "de"],
         "extractor_args": {
             "youtube": {
-                "max_comments": [str(max_comments)],
-                "max_comment_depth": [str(comment_depth)],
+                "max_comments": [str(max_comments), "all", "all", str(max_replies_per_thread)],
                 "comment_sort": ["top"],
             }
         },
