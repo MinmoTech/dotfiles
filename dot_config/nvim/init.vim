@@ -64,6 +64,7 @@ Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
 Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'folke/trouble.nvim'
+Plug 'mattn/emmet-vim'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'petertriho/nvim-scrollbar'
 Plug 'dpelle/vim-LanguageTool'
