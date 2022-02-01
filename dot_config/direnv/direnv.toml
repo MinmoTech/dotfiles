@@ -1,0 +1,4 @@
+[global]
+warn_timeout = "24h"
+strict_env = true
+skip_dotenv = true
