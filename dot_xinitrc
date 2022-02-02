@@ -14,6 +14,7 @@ export EDITOR=nvim
 export VISUAL=nvim
 
 
+xhost +si:localuser:$USER
 #Toolbar for anthy
 fcitx5 -d &
 exec /home/julius/.config/startup.sh &
