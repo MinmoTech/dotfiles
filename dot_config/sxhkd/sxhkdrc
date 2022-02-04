@@ -276,7 +276,7 @@ super + shift + n
     ~/Programs/brave_click.sh
 
 alt + grave
-	xdotool click 3 && sleep 0.05 && xdotool key o
+	xdotool keydown ctrl && xdotool click 3 && xdotool keyup ctrl && sleep 0.05 && xdotool key o
 super + grave
 	~/Programs/ocr.sh
 KP_Add
