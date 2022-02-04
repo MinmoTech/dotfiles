@@ -27,11 +27,10 @@ playerctld daemon &
 # rg --files ~/.doom.d/ | entr ~/.emacs.d/bin/doom refresh
 # notify-send (.emacs.d/bin/doom doctor | tail -2 | sed 's/\x1b\[[0-9;]*m//g')
 
-/opt/piavpn/bin/piactl background enable &
-/opt/piavpn/bin/piactl connect &
+# /opt/piavpn/bin/piactl background enable &
+# /opt/piavpn/bin/piactl connect &
 
 # ~/Programs/brave_click.py &
-# /opt/piavpn/bin/piactl connect &
 
 # jellyfin-mpv-shim &
 
