@@ -217,13 +217,13 @@ XF86Launch6
 	jumpapp -f TogglDesktop
 
 super + alt + 1
-	xdotool click 3 && sleep 0.1 && xdotool key e && xclip -sel clip -o | xargs io.mpv.Mpv --script-opts=try_ytdl_first=yes --input-ipc-server=/tmp/mpvsocket
+	xclip -sel clip -o | xargs io.mpv.Mpv --script-opts=try_ytdl_first=yes --input-ipc-server=/tmp/mpvsocket
 super + alt + 2
-	xdotool click 3 && sleep 0.1 && xdotool key e && xclip -sel clip -o | xargs -I _ echo loadfile _ append-play | socat - /tmp/mpvsocket
+	xclip -sel clip -o | xargs -I _ echo loadfile _ append-play | socat - /tmp/mpvsocket
 super + alt + 3
-	xdotool click 3 && sleep 0.1 && xdotool key e && xclip -sel clip -o | xargs python ~/Programs/download_video_with_chapters.py
+	xclip -sel clip -o | xargs python ~/Programs/download_video_with_chapters.py
 super + alt + 4
-	xdotool click 3 && sleep 0.1 && xdotool key e && xclip -sel clip -o | xargs yt-dlp --add-metadata --sub-lang jpn,ja,en,de --merge-output-format mp4 --embed-subs --write-auto-sub --output "~/Videos/youtube/%(title)s-%(id)s.%(ext)s"
+	xclip -sel clip -o | xargs yt-dlp --add-metadata --sub-lang jpn,ja,en,de --merge-output-format mp4 --embed-subs --write-auto-sub --output "~/Videos/youtube/%(title)s-%(id)s.%(ext)s"
 
 ctrl + alt + y
     emote
