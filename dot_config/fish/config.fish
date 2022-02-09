@@ -28,9 +28,3 @@ set PATH $GOPATH/bin $GOROOT/bin $PYPATH /home/julius/.cargo/bin $PATH
 source /opt/anaconda/etc/fish/conf.d/conda.fish
 status is-login; and pyenv init --path | source
 status is-interactive; and pyenv init - | source
-
-if test -n "$DIRENV_DIR"
-    echo "In DirEnv"
-else if test -f /run/.containerenv
-    echo "Out of DirEnv"
-end
