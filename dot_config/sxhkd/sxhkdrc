@@ -223,7 +223,7 @@ super + alt + 2
 super + alt + 3
 	xclip -sel clip -o | xargs python ~/Programs/download_video_with_chapters.py
 super + alt + 4
-	xclip -sel clip -o | xargs yt-dlp --add-metadata --sub-lang jpn,ja,en,de --merge-output-format mp4 --embed-subs --write-auto-sub --output "~/Videos/youtube/%(title)s-%(id)s.%(ext)s"
+	xclip -sel clip -o | xargs yt-dlp --add-metadata --sub-lang jpn,ja,en,de --merge-output-format webm --embed-subs --write-auto-sub --output "~/Videos/youtube/%(title)s-%(id)s.%(ext)s"
 
 ctrl + alt + y
     emote
