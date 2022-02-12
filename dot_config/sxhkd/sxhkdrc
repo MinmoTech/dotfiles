@@ -182,8 +182,6 @@ shift + XF86AudioLowerVolume
 	playerctl previous
 shift + XF86AudioRaiseVolume
 	playerctl next
-ctrl + shift + XF86AudioLowerVolume
-	~/Programs/touhou_reduce_volume.sh
 
 ctrl + XF86AudioLowerVolume
 	playerctl volume 0.05-
@@ -305,7 +303,7 @@ super + ctrl + s
 	~/Programs/sanseido_wrapper.sh
 
 XF86Launch5
-    sleep 0.3 && xdotool key dollar w Return
+    ~/Programs/touhou_reduce_volume.sh
 
 ctrl + super + o
 	clipmenu
