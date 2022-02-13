@@ -7,4 +7,4 @@
 
 PS1='[\u@\h \W]\$ '
 [ -r /home/julius/.byobu/prompt ] && . /home/julius/.byobu/prompt   #byobu-prompt#
-eval "$(pyenv init -)"
+# eval "$(pyenv init -)"
