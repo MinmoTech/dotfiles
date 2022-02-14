@@ -213,8 +213,6 @@ super + k
 	jumpapp -f zoom
 super + q
 	jumpapp mpv || wmctrl -a mpv
-XF86Launch6
-	jumpapp -f TogglDesktop
 
 super + alt + 1
 	xclip -sel clip -o | xargs io.mpv.Mpv --script-opts=try_ytdl_first=yes --input-ipc-server=/tmp/mpvsocket
@@ -304,6 +302,8 @@ super + ctrl + s
 
 XF86Launch5
     ~/Programs/touhou_reduce_volume.sh
+XF86Launch6
+    ~/Programs/remove_whitespace.sh
 
 ctrl + super + o
 	clipmenu
