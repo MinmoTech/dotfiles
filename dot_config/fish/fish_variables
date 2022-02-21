@@ -15,11 +15,15 @@ SETUVAR _fish_abbr_fishrc:nvim\x20\x7e/\x2econfig/fish/config\x2efish
 SETUVAR _fish_abbr_gs:git\x20status
 SETUVAR _fish_abbr_ipa:ip\x20\x2dcolor\x20\x2dbr\x20a
 SETUVAR _fish_abbr_ipfsadd:\x7e/Programs/ipfs\x2dadd\x2esh
+SETUVAR _fish_abbr_ipns:\x7e/Programs/ipns\x2esh
 SETUVAR _fish_abbr_k:kubectl
 SETUVAR _fish_abbr_kittyrc:chezmoi\x20edit\x20\x7e/\x2econfig/kitty/kitty\x2econf
 SETUVAR _fish_abbr_mkdir:mkdir\x20\x2dvp
 SETUVAR _fish_abbr_mv:mv\x20\x2div
+SETUVAR _fish_abbr_pinata:\x7e/Programs/pinata_pin\x2esh
 SETUVAR _fish_abbr_rangerrc:chezmoi\x20edit\x20\x7e/\x2econfig/ranger/rc\x2econf
+SETUVAR _fish_abbr_rcloneadd:/home/julius/Programs/rclone_add\x2esh
+SETUVAR _fish_abbr_rm:trash\x2dput
 SETUVAR _fish_abbr_ssc:ssh\x20173\x2e212\x2e244\x2e131\x20\x2dt\x20byobu
 SETUVAR _fish_abbr_ssp:ssh\x20\x2dYC\x20Cellaris\x20\x2dt\x20byobu\x20\x7c\x7c\x20ssh\x20\x2dYC\x20plexiglas\x2exyz\x20\x2dt\x20byobu
 SETUVAR _fish_abbr_ssr:ssh\x20raspberry\x20\x2dt\x20byobu
