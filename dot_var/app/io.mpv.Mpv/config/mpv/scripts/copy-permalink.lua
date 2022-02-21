@@ -18,7 +18,7 @@ function sharePermalink()
   local uri = mp.get_property("path")
   local yt_id_letter = "[%a%d%-_]"
   local yt_id_patterm = string.rep(yt_id_letter, 11)
-  local id = string.match(uri, "(" .. yt_id_patterm .. ")%.%a%a.$")
+  local id = string.match(uri, "(" .. yt_id_patterm .. ")%.%a%a%a?.$")
   -- mp.osd_message(id, 5)
 
   if isempty(id) then
@@ -41,7 +41,7 @@ function shareYoutubeUrl()
   local uri = mp.get_property("path")
   local yt_id_letter = "[%a%d%-_]"
   local yt_id_patterm = string.rep(yt_id_letter, 11)
-  local id = string.match(uri, "(" .. yt_id_patterm .. ")%.%a%a.$")
+  local id = string.match(uri, "(" .. yt_id_patterm .. ")%.%a%a%a?.$")
   -- mp.osd_message(id, 5)
 
   if isempty(id) then
@@ -62,5 +62,5 @@ end
 
 -- mp.register_script_message("copy-permalink", copyPermalink)
 -- mp.add_key_binding("shift+SPACE", "copy-permalink", copyPermalink)
-mp.add_key_binding("ctrl+SPACE", "share-permalink", sharePermalink)
-mp.add_key_binding("ctrl+z", "share-youtube-url", shareYoutubeUrl)
+mp.add_key_binding("ctrl+SPACE", "share-youtube-url", shareYoutubeUrl)
+mp.add_key_binding("ctrl+alt+SPACE", "share-permalink", sharePermalink)
