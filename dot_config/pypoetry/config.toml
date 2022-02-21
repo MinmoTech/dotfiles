@@ -1,4 +1,4 @@
 [virtualenvs]
 in-project = true
-path = "/home/julius/.pyenv"
 create = true
+prefer-active-python = true
