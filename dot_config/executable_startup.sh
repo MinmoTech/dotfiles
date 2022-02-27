@@ -55,4 +55,5 @@ sxhkd &
 chia start farmer &
 sleep 60 && ksnip &
 sleep 60 && libinput-gestures-setup start &
+pactl load-module module-null-sink media.class=Audio/Sink sink_name=combine channel_map=stereo &
 # xfsettingsd &
