@@ -52,6 +52,7 @@ xsetwacom set "Wacom Intuos Pro M (WL) Pen eraser" MapToOutput $SCREEN &
 xsetwacom set "Wacom Intuos Pro M (WL) Finger touch" Touch off &
 # xinput set-float-prop "Wacom Intuos Pro M (WL) Finger touch" "Device Accel Constant Deceleration" 2
 sxhkd &
+monero-wallet-gui &
 chia start farmer &
 sleep 60 && ksnip &
 sleep 60 && libinput-gestures-setup start &
