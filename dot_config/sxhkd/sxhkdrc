@@ -149,6 +149,8 @@ super + shift + c
     jumpapp -c "Chromium-browser" com.github.Eloston.UngoogledChromium || wmctrl -a chromium
 super + v
 	jumpapp discord || wmctrl -a discord || flatpak run com.discordapp.Discord
+super + 7
+	echo "julius.dehner@gmail.com" | xclip -sel clip
 super + y
 	echo "Julius.Dehner" | xclip -sel clip
 super + shift + y
