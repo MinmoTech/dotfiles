@@ -5,5 +5,5 @@ FILE=$1
 
 hash=$(ipfs add -wrQ "$FILE")
 echo "$hash"
-/bin/echo -n "https://ipfs.io/ipfs/${hash}/${FILE}" | xclip -sel clip
+/bin/echo -n "https://migaku_test.mypinata.cloud/ipfs/${hash}/${FILE}" | xclip -sel clip
 echo "$hash" > /tmp/ipfshash
