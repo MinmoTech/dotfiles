@@ -302,7 +302,7 @@ super + alt + z
 super + ctrl + s
 	~/Programs/sanseido_wrapper.sh
 
-XF86Launch5
+shift + F2
     ~/Programs/touhou_reduce_volume.sh
 XF86Launch6
     ~/Programs/remove_whitespace.sh
