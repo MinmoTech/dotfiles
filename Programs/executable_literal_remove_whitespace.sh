@@ -1,5 +1,5 @@
 #!/bin/sh
 set -eu
 
-text=$(xclip -o -selection clipboard | sed 's/ //g' | sed 's/\[.*\]//g' | sed 's/\{.*\}//g' | tr -d \\n)
+text=$(xclip -o -selection clipboard | sed 's/ //g' | sed 's/\[.*\]//g' | sed 's/{.*}//g' | tr -d \\n)
 echo "$text" | xclip -selection clipboard
