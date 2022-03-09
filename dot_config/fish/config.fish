@@ -23,6 +23,7 @@ theme.sh iceberg-light
 set NODE_VERSIONS ~/.config/nvm
 set NODE_VERSION_PREFIX ''
 # GoLang
+set CLOUDSDK_PYTHON (which python3)
 set GOROOT '/home/julius/.go'
 set GOPATH /home/julius/go
 set PYPATH '/home/julius/.local/bin'
