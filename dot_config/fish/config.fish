@@ -20,7 +20,7 @@ set -x MANPAGER "sh -c 'col -bx | bat -l man -p'"
 theme.sh iceberg-light
 
 
-set NODE_VERSIONS ~/.config/nvm
+set NODE_VERSIONS ~/.local/share/nvm
 set NODE_VERSION_PREFIX ''
 # GoLang
 set CLOUDSDK_PYTHON (which python3)
