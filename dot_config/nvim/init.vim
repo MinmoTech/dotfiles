@@ -157,6 +157,7 @@ local sources = {
     null_ls.builtins.formatting.eslint.with({
         prefer_local = "node_modules/.bin",
     }),
+    null_ls.builtins.formatting.ktlint,
     null_ls.builtins.formatting.fish_indent,
     null_ls.builtins.formatting.taplo,
     null_ls.builtins.formatting.terraform_fmt,
@@ -172,6 +173,7 @@ local sources = {
     null_ls.builtins.diagnostics.mypy.with({
         prefer_local = ".venv/bin",
     }),
+    null_ls.builtins.diagnostics.ktlint,
     null_ls.builtins.diagnostics.shellcheck,
     null_ls.builtins.diagnostics.hadolint,
     null_ls.builtins.code_actions.eslint.with({
