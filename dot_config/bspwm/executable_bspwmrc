@@ -11,7 +11,6 @@ if [[ $(hostname) == 'Nostromo' ]]; then
 elif [[ $(hostname) == 'cellaris' ]]; then
     bspc monitor HDMI-0 -d 1 2 5
     bspc monitor DP-2 -d 3 4
-    bspc rule -a Brave-browser desktop=^1
 elif [[ $(hostname) == 'sevastopol' ]]; then
     bspc monitor eDP1 -d 1 2
     bspc monitor HDMI1 -d 3 4
