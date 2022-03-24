@@ -141,6 +141,8 @@ super + a
 	jumpapp -c "anki" net.ankiweb.Anki || wmctrl -a anki
 super + n
 	jumpapp jetbrains-idea
+super + p
+	jumpapp libreoffice
 super + c
 	jumpapp -c "Brave-browser" com.brave.Browser || wmctrl -a brave
 super + alt + c
