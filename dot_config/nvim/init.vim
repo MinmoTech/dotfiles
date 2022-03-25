@@ -227,7 +227,7 @@ EOF
 let g:coq_settings = {'auto_start': 'shut-up', 'keymap.jump_to_mark' : '<C-j>' }
 lua << EOF
 require("coq_3p"){
-    { src = 'copilot', short_name = 'COP', accept_key = '<C-g>' },
+    { src = 'copilot', short_name = 'COP', accept_key = '<C-r>' },
 }
 require('gitsigns').setup()
 
