@@ -226,6 +226,9 @@ EOF
 " coq {{{
 let g:coq_settings = {'auto_start': 'shut-up', 'keymap.jump_to_mark' : '<C-j>' }
 lua << EOF
+coq_3p{
+    { src = 'copilot', short_name = 'COP', accept_key = '<C-f>' },
+}
 require('gitsigns').setup()
 
 local lsp_installer = require("nvim-lsp-installer")
