@@ -69,6 +69,7 @@ Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'petertriho/nvim-scrollbar'
 Plug 'dpelle/vim-LanguageTool'
 Plug 'ggandor/lightspeed.nvim'
+Plug 'github/copilot.vim'
 
 " Plug 'mfussenegger/nvim-dap'
 " Plug 'Pocco81/DAPInstall.nvim'
