@@ -59,9 +59,9 @@ Plug 'alker0/chezmoi.vim'
 " Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
 Plug 'neovim/nvim-lspconfig'
 Plug 'williamboman/nvim-lsp-installer'
-Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+" Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+" Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+" Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
 Plug 'folke/trouble.nvim'
 Plug 'mattn/emmet-vim'
@@ -222,11 +222,11 @@ require'nvim-treesitter.configs'.setup {
 EOF
 " }}}
 " coq {{{
-let g:coq_settings = {'auto_start': 'shut-up', 'keymap.jump_to_mark' : '<C-j>' }
+" let g:coq_settings = {'auto_start': 'shut-up', 'keymap.jump_to_mark' : '<C-j>' }
 lua << EOF
-require("coq_3p"){
-    { src = 'copilot', short_name = 'COP', accept_key = '<C-g>' },
-}
+-- require("coq_3p"){
+--     { src = 'copilot', short_name = 'COP', accept_key = '<C-g>' },
+-- }
 require('gitsigns').setup()
 
 local lsp_installer = require("nvim-lsp-installer")
