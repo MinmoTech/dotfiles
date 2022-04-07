@@ -67,7 +67,6 @@ Plug 'folke/trouble.nvim'
 Plug 'mattn/emmet-vim'
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'petertriho/nvim-scrollbar'
-Plug 'dpelle/vim-LanguageTool'
 Plug 'ggandor/lightspeed.nvim'
 Plug 'github/copilot.vim'
 
@@ -140,7 +139,6 @@ highlight Search ctermfg=0
 " }}}
 " Plugin Configuration {{{
 
-let g:languagetool_jar = '/usr/share/java/languagetool/languagetool-commandline.jar'
 lua << EOF
 require('Comment').setup()
 
