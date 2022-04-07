@@ -1,94 +1,216 @@
-" vim-plug  {{{
-if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-    silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
-                \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-endif
-call plug#begin('~/.vim/plugged')
-Plug 'mbbill/undotree' " Navigate undos
-Plug 'tpope/vim-surround' " change/append sourroundings of sommething - cs'} = change sourrounding single quotes with wavy brackets
-Plug 'tpope/vim-repeat' " make surround actions repeatable
-Plug 'kdheepak/lazygit.nvim'
-Plug 'rhysd/git-messenger.vim' " <leader>gm show last git commit for current line (similar to gitlens)
-Plug 'tpope/vim-sleuth' " Autodetect indentation rules
-Plug 'numToStr/Comment.nvim' " Comment stuff
-Plug 'tpope/vim-abolish' " crs > convert to snake case
-Plug 'christoomey/vim-system-copy' " cpit > this copies the content of a tag into your clipboard
-Plug 'vim-airline/vim-airline' " shows buffers for files
-Plug 'vim-airline/vim-airline-themes'
-Plug 'ntpeters/vim-better-whitespace' " better whitespace cleaning
-Plug 'nelstrom/vim-visual-star-search' " use * to jump to next instace of current word
-Plug 'psliwka/vim-smoothie' " smooth scrolling
-Plug 'kyazdani42/nvim-web-devicons' " for file icons
-Plug 'andymass/vim-matchup' " improve % and add text objects i% and a%
-Plug 'chaoren/vim-wordmotion' " camelcasemotion
-Plug 'cocopon/iceberg.vim'
-Plug 'rafamadriz/neon'
-Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-Plug 'ku-s-h/summerfruit256.vim'
-Plug 'kana/vim-textobj-user' " Add new textobjects easily
-Plug 'wellle/targets.vim' " more text objects, enables stuff like ci, or ci/
-" Plug 'jeetsukumaran/vim-pythonsense' " Add python text objects: ac (around class), ic, af, if (inner function)
-Plug 'pechorin/any-jump.nvim' " Use regex to 'go to definition' anywhere (<leader>j)
-Plug 'rbgrouleff/bclose.vim' " Dependency of ranger.vim
-Plug 'francoiscabrol/ranger.vim' " Use ranger inside of vim
-" Plug 'unblevable/quick-scope' " Improve f key
-Plug 'machakann/vim-highlightedyank' " highlight yanked text
-Plug 'vim-scripts/ReplaceWithRegister' " <gr>motion replaces text with register
-Plug 'Matt-A-Bennett/vim-surround-funk' " <dsf> delete sourrounding fuction, <gs> wrap current fuction with the one in register
-" Plug 'christianrondeau/vim-base64' " Encodes/decodes base64 strings
-" Plug 'artur-shaik/vim-javacomplete2'
-Plug 'jremmen/vim-ripgrep'
-Plug 'dhruvasagar/vim-table-mode'
-Plug 'godlygeek/tabular'
-Plug 'kevinhwang91/nvim-bqf'
-Plug 'vim-pandoc/vim-pandoc-syntax'
-Plug 'vim-pandoc/vim-pandoc'
-Plug 'vim-pandoc/vim-rmarkdown'
-Plug 'vim-pandoc/vim-pandoc-after'
-" Plug 'vim-pandoc/vim-markdownfootnotes'
-Plug 'airblade/vim-rooter'
-Plug 'farmergreg/vim-lastplace'
-Plug 'nvim-lua/popup.nvim'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'lewis6991/gitsigns.nvim'
-Plug 'earthly/earthly.vim', { 'branch': 'main' }
-Plug 'hashivim/vim-hashicorp-tools'
-Plug 'alker0/chezmoi.vim'
-" Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
-Plug 'neovim/nvim-lspconfig'
-Plug 'williamboman/nvim-lsp-installer'
-" Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-" Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-" Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
-Plug 'hrsh7th/cmp-nvim-lsp'
-Plug 'hrsh7th/cmp-buffer'
-Plug 'hrsh7th/cmp-path'
-Plug 'hrsh7th/cmp-cmdline'
-Plug 'hrsh7th/nvim-cmp'
-Plug 'zbirenbaum/copilot.lua'
-Plug 'zbirenbaum/copilot-cmp'
-
-" For vsnip users.
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-Plug 'folke/trouble.nvim'
-Plug 'mattn/emmet-vim'
-Plug 'jose-elias-alvarez/null-ls.nvim'
-Plug 'petertriho/nvim-scrollbar'
-Plug 'ggandor/lightspeed.nvim'
-" Plug 'github/copilot.vim'
-
-" Plug 'mfussenegger/nvim-dap'
-" Plug 'Pocco81/DAPInstall.nvim'
-" Plug 'theHamsta/nvim-dap-virtual-text'
-" Plug 'mfussenegger/nvim-dap-python'
-Plug 'norcalli/nvim-colorizer.lua'
-call plug#end()
+" " vim-plug  {{{
+" if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
+"     silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
+"                 \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+"     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+" endif
+" call plug#begin('~/.vim/plugged')
+" Plug 'mbbill/undotree' " Navigate undos
+" Plug 'tpope/vim-surround' " change/append sourroundings of sommething - cs'} = change sourrounding single quotes with wavy brackets
+" Plug 'tpope/vim-repeat' " make surround actions repeatable
+" Plug 'kdheepak/lazygit.nvim'
+" Plug 'rhysd/git-messenger.vim' " <leader>gm show last git commit for current line (similar to gitlens)
+" Plug 'tpope/vim-sleuth' " Autodetect indentation rules
+" Plug 'numToStr/Comment.nvim' " Comment stuff
+" Plug 'tpope/vim-abolish' " crs > convert to snake case
+" Plug 'christoomey/vim-system-copy' " cpit > this copies the content of a tag into your clipboard
+" Plug 'vim-airline/vim-airline' " shows buffers for files
+" Plug 'vim-airline/vim-airline-themes'
+" Plug 'ntpeters/vim-better-whitespace' " better whitespace cleaning
+" Plug 'nelstrom/vim-visual-star-search' " use * to jump to next instace of current word
+" Plug 'psliwka/vim-smoothie' " smooth scrolling
+" Plug 'kyazdani42/nvim-web-devicons' " for file icons
+" Plug 'andymass/vim-matchup' " improve % and add text objects i% and a%
+" Plug 'chaoren/vim-wordmotion' " camelcasemotion
+" Plug 'cocopon/iceberg.vim'
+" Plug 'rafamadriz/neon'
+" Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
+" Plug 'ku-s-h/summerfruit256.vim'
+" Plug 'kana/vim-textobj-user' " Add new textobjects easily
+" Plug 'wellle/targets.vim' " more text objects, enables stuff like ci, or ci/
+" " Plug 'jeetsukumaran/vim-pythonsense' " Add python text objects: ac (around class), ic, af, if (inner function)
+" Plug 'pechorin/any-jump.nvim' " Use regex to 'go to definition' anywhere (<leader>j)
+" Plug 'rbgrouleff/bclose.vim' " Dependency of ranger.vim
+" Plug 'francoiscabrol/ranger.vim' " Use ranger inside of vim
+" " Plug 'unblevable/quick-scope' " Improve f key
+" Plug 'machakann/vim-highlightedyank' " highlight yanked text
+" Plug 'vim-scripts/ReplaceWithRegister' " <gr>motion replaces text with register
+" Plug 'Matt-A-Bennett/vim-surround-funk' " <dsf> delete sourrounding fuction, <gs> wrap current fuction with the one in register
+" " Plug 'christianrondeau/vim-base64' " Encodes/decodes base64 strings
+" " Plug 'artur-shaik/vim-javacomplete2'
+" Plug 'jremmen/vim-ripgrep'
+" Plug 'dhruvasagar/vim-table-mode'
+" Plug 'godlygeek/tabular'
+" Plug 'kevinhwang91/nvim-bqf'
+" Plug 'vim-pandoc/vim-pandoc-syntax'
+" Plug 'vim-pandoc/vim-pandoc'
+" Plug 'vim-pandoc/vim-rmarkdown'
+" Plug 'vim-pandoc/vim-pandoc-after'
+" " Plug 'vim-pandoc/vim-markdownfootnotes'
+" Plug 'airblade/vim-rooter'
+" Plug 'farmergreg/vim-lastplace'
+" Plug 'nvim-lua/popup.nvim'
+" Plug 'nvim-lua/plenary.nvim'
+" Plug 'nvim-telescope/telescope.nvim'
+" Plug 'lewis6991/gitsigns.nvim'
+" Plug 'earthly/earthly.vim', { 'branch': 'main' }
+" Plug 'hashivim/vim-hashicorp-tools'
+" Plug 'alker0/chezmoi.vim'
+" " Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
+" Plug 'neovim/nvim-lspconfig'
+" Plug 'williamboman/nvim-lsp-installer'
+" " Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
+" " Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
+" " Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
+" Plug 'hrsh7th/cmp-nvim-lsp'
+" Plug 'hrsh7th/cmp-buffer'
+" Plug 'hrsh7th/cmp-path'
+" Plug 'hrsh7th/cmp-cmdline'
+" Plug 'hrsh7th/nvim-cmp'
+" Plug 'zbirenbaum/copilot.lua'
+" Plug 'zbirenbaum/copilot-cmp'
+"
+" " For vsnip users.
+" Plug 'hrsh7th/cmp-vsnip'
+" Plug 'hrsh7th/vim-vsnip'
+" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
+" Plug 'folke/trouble.nvim'
+" Plug 'mattn/emmet-vim'
+" Plug 'jose-elias-alvarez/null-ls.nvim'
+" Plug 'petertriho/nvim-scrollbar'
+" Plug 'ggandor/lightspeed.nvim'
+" " Plug 'github/copilot.vim'
+"
+" " Plug 'mfussenegger/nvim-dap'
+" " Plug 'Pocco81/DAPInstall.nvim'
+" " Plug 'theHamsta/nvim-dap-virtual-text'
+" " Plug 'mfussenegger/nvim-dap-python'
+" Plug 'norcalli/nvim-colorizer.lua'
+" call plug#end()
 
 " }}}
+lua << EOF
+vim.cmd [[packadd packer.nvim]]
+
+return require('packer').startup(function()
+  -- Packer can manage itself
+  use 'wbthomason/packer.nvim'
+
+  use 'mbbill/undotree' -- Navigate undos
+  use 'tpope/vim-surround' -- change/append sourroundings of sommething - cs'} = change sourrounding single quotes with wavy brackets
+  use 'tpope/vim-repeat' -- make surround actions repeatable
+  use 'kdheepak/lazygit.nvim'
+  use 'rhysd/git-messenger.vim' -- <leader>gm show last git commit for current line (similar to gitlens)
+  use 'tpope/vim-sleuth' -- Autodetect indentation rules
+  use 'numToStr/Comment.nvim' -- Comment stuff
+  use 'tpope/vim-abolish' -- crs > convert to snake case
+  use 'christoomey/vim-system-copy' -- cpit > this copies the content of a tag into your clipboard
+  use 'vim-airline/vim-airline' -- shows buffers for files
+  use 'vim-airline/vim-airline-themes'
+  use 'ntpeters/vim-better-whitespace' -- better whitespace cleaning
+  use 'nelstrom/vim-visual-star-search' -- use * to jump to next instace of current word
+  use 'psliwka/vim-smoothie' -- smooth scrolling
+  use 'kyazdani42/nvim-web-devicons' -- for file icons
+  use 'andymass/vim-matchup' -- improve % and add text objects i% and a%
+  use 'chaoren/vim-wordmotion' -- camelcasemotion
+  use 'cocopon/iceberg.vim'
+  use 'rafamadriz/neon'
+  use 'folke/tokyonight.nvim', { 'branch': 'main' }
+  use 'ku-s-h/summerfruit256.vim'
+  use 'kana/vim-textobj-user' -- Add new textobjects easily
+  use 'wellle/targets.vim' -- more text objects, enables stuff like ci, or ci/
+  use 'pechorin/any-jump.nvim' -- Use regex to 'go to definition' anywhere (<leader>j)
+  use 'rbgrouleff/bclose.vim' -- Dependency of ranger.vim
+  use 'francoiscabrol/ranger.vim' -- Use ranger inside of vim
+  use 'machakann/vim-highlightedyank' -- highlight yanked text
+  use 'vim-scripts/ReplaceWithRegister' -- <gr>motion replaces text with register
+  use 'Matt-A-Bennett/vim-surround-funk' -- <dsf> delete sourrounding fuction, <gs> wrap current fuction with the one in register
+  use 'jremmen/vim-ripgrep'
+  use 'dhruvasagar/vim-table-mode'
+  use 'godlygeek/tabular'
+  use 'kevinhwang91/nvim-bqf'
+  use 'vim-pandoc/vim-pandoc-syntax'
+  use 'vim-pandoc/vim-pandoc'
+  use 'vim-pandoc/vim-rmarkdown'
+  use 'vim-pandoc/vim-pandoc-after'
+  use 'airblade/vim-rooter'
+  use 'farmergreg/vim-lastplace'
+  use 'nvim-lua/popup.nvim'
+  use 'nvim-lua/plenary.nvim'
+  use 'nvim-telescope/telescope.nvim'
+  use 'lewis6991/gitsigns.nvim'
+  use 'earthly/earthly.vim', { 'branch': 'main' }
+  use 'hashivim/vim-hashicorp-tools'
+  use 'alker0/chezmoi.vim'
+  use 'neovim/nvim-lspconfig'
+  use 'williamboman/nvim-lsp-installer'
+  use 'hrsh7th/cmp-nvim-lsp'
+  use 'hrsh7th/cmp-buffer'
+  use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-cmdline'
+  use 'hrsh7th/nvim-cmp'
+  use 'zbirenbaum/copilot.lua'
+  use 'zbirenbaum/copilot-cmp'
+-- For vsnip users.
+  use 'hrsh7th/cmp-vsnip'
+  use 'hrsh7th/vim-vsnip'
+  use 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  -- We recommend updating the parsers on update
+  use 'folke/trouble.nvim'
+  use 'mattn/emmet-vim'
+  use 'jose-elias-alvarez/null-ls.nvim'
+  use 'petertriho/nvim-scrollbar'
+  use 'ggandor/lightspeed.nvim'
+  use 'norcalli/nvim-colorizer.lua'
+
+  -- Plugins can have dependencies on other plugins
+  use {
+    'haorenW1025/completion-nvim',
+    opt = true,
+    requires = {{'hrsh7th/vim-vsnip', opt = true}, {'hrsh7th/vim-vsnip-integ', opt = true}}
+  }
+
+  -- Plugins can also depend on rocks from luarocks.org:
+  use {
+    'my/supercoolplugin',
+    rocks = {'lpeg', {'lua-cjson', version = '2.1.0'}}
+  }
+
+  -- You can specify rocks in isolation
+  use_rocks 'penlight'
+  use_rocks {'lua-resty-http', 'lpeg'}
+
+  -- Local plugins can be included
+  use '~/projects/personal/hover.nvim'
+
+  -- Plugins can have post-install/update hooks
+  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
+
+  -- Post-install/update hook with neovim command
+  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
+
+  -- Post-install/update hook with call of vimscript function with argument
+  use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
+
+  -- Use specific branch, dependency and run lua file after load
+  use {
+    'glepnir/galaxyline.nvim', branch = 'main', config = function() require'statusline' end,
+    requires = {'kyazdani42/nvim-web-devicons'}
+  }
+
+  -- Use dependency and run lua function after load
+  use {
+    'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
+    config = function() require('gitsigns').setup() end
+  }
+
+  -- You can specify multiple plugins in a single call
+  use {'tjdevries/colorbuddy.vim', {'nvim-treesitter/nvim-treesitter', opt = true}}
+
+  -- You can alias plugin names
+  use {'dracula/vim', as = 'dracula'}
+end)
+EOF
+
 lua << EOF
 vim.opt.relativenumber = true
 vim.opt.number = true
