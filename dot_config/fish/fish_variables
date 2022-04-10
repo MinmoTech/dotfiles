@@ -1,11 +1,11 @@
 # This file contains fish universal variable definitions.
 # VERSION: 3.0
 SETUVAR EDITOR:nvim
-SETUVAR MANPAGER:sh\x20\x2dc\x20\x27col\x20\x2dbx\x20\x7c\x20bat\x20\x2dl\x20man\x20\x2dp\x27
+SETUVAR --export MANPAGER:sh\x20\x2dc\x20\x27col\x20\x2dbx\x20\x7c\x20bat\x20\x2dl\x20man\x20\x2dp\x27
 SETUVAR PAGER:nvim\x20\x2bMAN\x21
 SETUVAR --export PYENV_ROOT:/home/julius/\x2epyenv
 SETUVAR VISUAL:nvim
-SETUVAR __fish_initialized:3100
+SETUVAR __fish_initialized:3400
 SETUVAR _fish_abbr_bspwmrc:chezmoi\x20edit\x20\x7e/\x2econfig/bspwm/bspwmrc
 SETUVAR _fish_abbr_cdd:cd\x20\x7e/Downloads
 SETUVAR _fish_abbr_cdp:cd\x20\x7e/Projects
@@ -28,6 +28,7 @@ SETUVAR _fish_abbr_ssc:ssh\x20173\x2e212\x2e244\x2e131\x20\x2dt\x20byobu
 SETUVAR _fish_abbr_ssp:ssh\x20\x2dYC\x20Cellaris\x20\x2dt\x20byobu\x20\x7c\x7c\x20ssh\x20\x2dYC\x20plexiglas\x2exyz\x20\x2dt\x20byobu
 SETUVAR _fish_abbr_ssr:ssh\x20raspberry\x20\x2dt\x20byobu
 SETUVAR _fish_abbr_strace:strace\x20\x2df\x20\x2dy
+SETUVAR _fish_abbr_stream_2D_up:\x7e/Programs/stream\x2dup\x2engs
 SETUVAR _fish_abbr_sxhkdrc:chezmoi\x20edit\x20\x7e/\x2econfig/sxhkd/sxhkdrc
 SETUVAR _fish_abbr_t:terraform
 SETUVAR _fish_abbr_tg:terragrunt
@@ -71,7 +72,8 @@ SETUVAR fish_pager_color_completion:normal
 SETUVAR fish_pager_color_description:B3A06D\x1eyellow
 SETUVAR fish_pager_color_prefix:normal\x1e\x2d\x2dbold\x1e\x2d\x2dunderline
 SETUVAR fish_pager_color_progress:brwhite\x1e\x2d\x2dbackground\x3dcyan
-SETUVAR fish_user_paths:/home/julius/\x2epyenv/bin\x1e/home/julius/\x2epyenv/bin
+SETUVAR fish_pager_color_selected_background:\x2dr
+SETUVAR fish_user_paths:/home/julius/\x2epyenv/bin
 SETUVAR nvm_data:/home/julius/\x2elocal/share/nvm
-SETUVAR nvm_default_version:v14\x2e17\x2e5
+SETUVAR nvm_default_version:16
 SETUVAR nvm_mirror:https\x3a//nodejs\x2eorg/dist
