@@ -1,108 +1,24 @@
-" " vim-plug  {{{
-" if empty(glob('~/.local/share/nvim/site/autoload/plug.vim'))
-"     silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
-"                 \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-"     autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
-" endif
-" call plug#begin('~/.vim/plugged')
-" Plug 'mbbill/undotree' " Navigate undos
-" Plug 'tpope/vim-surround' " change/append sourroundings of sommething - cs'} = change sourrounding single quotes with wavy brackets
-" Plug 'tpope/vim-repeat' " make surround actions repeatable
-" Plug 'kdheepak/lazygit.nvim'
-" Plug 'rhysd/git-messenger.vim' " <leader>gm show last git commit for current line (similar to gitlens)
-" Plug 'tpope/vim-sleuth' " Autodetect indentation rules
-" Plug 'numToStr/Comment.nvim' " Comment stuff
-" Plug 'tpope/vim-abolish' " crs > convert to snake case
-" Plug 'christoomey/vim-system-copy' " cpit > this copies the content of a tag into your clipboard
-" Plug 'vim-airline/vim-airline' " shows buffers for files
-" Plug 'vim-airline/vim-airline-themes'
-" Plug 'ntpeters/vim-better-whitespace' " better whitespace cleaning
-" Plug 'nelstrom/vim-visual-star-search' " use * to jump to next instace of current word
-" Plug 'psliwka/vim-smoothie' " smooth scrolling
-" Plug 'kyazdani42/nvim-web-devicons' " for file icons
-" Plug 'andymass/vim-matchup' " improve % and add text objects i% and a%
-" Plug 'chaoren/vim-wordmotion' " camelcasemotion
-" Plug 'cocopon/iceberg.vim'
-" Plug 'rafamadriz/neon'
-" Plug 'folke/tokyonight.nvim', { 'branch': 'main' }
-" Plug 'ku-s-h/summerfruit256.vim'
-" Plug 'kana/vim-textobj-user' " Add new textobjects easily
-" Plug 'wellle/targets.vim' " more text objects, enables stuff like ci, or ci/
-" " Plug 'jeetsukumaran/vim-pythonsense' " Add python text objects: ac (around class), ic, af, if (inner function)
-" Plug 'pechorin/any-jump.nvim' " Use regex to 'go to definition' anywhere (<leader>j)
-" Plug 'rbgrouleff/bclose.vim' " Dependency of ranger.vim
-" Plug 'francoiscabrol/ranger.vim' " Use ranger inside of vim
-" " Plug 'unblevable/quick-scope' " Improve f key
-" Plug 'machakann/vim-highlightedyank' " highlight yanked text
-" Plug 'vim-scripts/ReplaceWithRegister' " <gr>motion replaces text with register
-" Plug 'Matt-A-Bennett/vim-surround-funk' " <dsf> delete sourrounding fuction, <gs> wrap current fuction with the one in register
-" " Plug 'christianrondeau/vim-base64' " Encodes/decodes base64 strings
-" " Plug 'artur-shaik/vim-javacomplete2'
-" Plug 'jremmen/vim-ripgrep'
-" Plug 'dhruvasagar/vim-table-mode'
-" Plug 'godlygeek/tabular'
-" Plug 'kevinhwang91/nvim-bqf'
-" Plug 'vim-pandoc/vim-pandoc-syntax'
-" Plug 'vim-pandoc/vim-pandoc'
-" Plug 'vim-pandoc/vim-rmarkdown'
-" Plug 'vim-pandoc/vim-pandoc-after'
-" " Plug 'vim-pandoc/vim-markdownfootnotes'
-" Plug 'airblade/vim-rooter'
-" Plug 'farmergreg/vim-lastplace'
-" Plug 'nvim-lua/popup.nvim'
-" Plug 'nvim-lua/plenary.nvim'
-" Plug 'nvim-telescope/telescope.nvim'
-" Plug 'lewis6991/gitsigns.nvim'
-" Plug 'earthly/earthly.vim', { 'branch': 'main' }
-" Plug 'hashivim/vim-hashicorp-tools'
-" Plug 'alker0/chezmoi.vim'
-" " Plug 'sakhnik/nvim-gdb', { 'do': ':!./install.sh \| UpdateRemotePlugins' }
-" Plug 'neovim/nvim-lspconfig'
-" Plug 'williamboman/nvim-lsp-installer'
-" " Plug 'ms-jpq/coq_nvim', {'branch': 'coq'}
-" " Plug 'ms-jpq/coq.artifacts', {'branch': 'artifacts'}
-" " Plug 'ms-jpq/coq.thirdparty', {'branch': '3p'}
-" Plug 'hrsh7th/cmp-nvim-lsp'
-" Plug 'hrsh7th/cmp-buffer'
-" Plug 'hrsh7th/cmp-path'
-" Plug 'hrsh7th/cmp-cmdline'
-" Plug 'hrsh7th/nvim-cmp'
-" Plug 'zbirenbaum/copilot.lua'
-" Plug 'zbirenbaum/copilot-cmp'
-"
-" " For vsnip users.
-" Plug 'hrsh7th/cmp-vsnip'
-" Plug 'hrsh7th/vim-vsnip'
-" Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  " We recommend updating the parsers on update
-" Plug 'folke/trouble.nvim'
-" Plug 'mattn/emmet-vim'
-" Plug 'jose-elias-alvarez/null-ls.nvim'
-" Plug 'petertriho/nvim-scrollbar'
-" Plug 'ggandor/lightspeed.nvim'
-" " Plug 'github/copilot.vim'
-"
-" " Plug 'mfussenegger/nvim-dap'
-" " Plug 'Pocco81/DAPInstall.nvim'
-" " Plug 'theHamsta/nvim-dap-virtual-text'
-" " Plug 'mfussenegger/nvim-dap-python'
-" Plug 'norcalli/nvim-colorizer.lua'
-" call plug#end()
-
-" }}}
 lua << EOF
-vim.cmd [[packadd packer.nvim]]
+local fn = vim.fn
+local install_path = fn.stdpath('data')..'/site/pack/packer/start/packer.nvim'
+if fn.empty(fn.glob(install_path)) > 0 then
+  packer_bootstrap = fn.system({'git', 'clone', '--depth', '1', 'https://github.com/wbthomason/packer.nvim', install_path})
+end
 
-return require('packer').startup(function()
-  -- Packer can manage itself
+return require('packer').startup(function(use)
   use 'wbthomason/packer.nvim'
-
   use 'mbbill/undotree' -- Navigate undos
   use 'tpope/vim-surround' -- change/append sourroundings of sommething - cs'} = change sourrounding single quotes with wavy brackets
   use 'tpope/vim-repeat' -- make surround actions repeatable
   use 'kdheepak/lazygit.nvim'
   use 'rhysd/git-messenger.vim' -- <leader>gm show last git commit for current line (similar to gitlens)
   use 'tpope/vim-sleuth' -- Autodetect indentation rules
-  use 'numToStr/Comment.nvim' -- Comment stuff
+  use {
+    'numToStr/Comment.nvim',
+    config = function()
+        require('Comment').setup()
+    end
+  }
   use 'tpope/vim-abolish' -- crs > convert to snake case
   use 'christoomey/vim-system-copy' -- cpit > this copies the content of a tag into your clipboard
   use 'vim-airline/vim-airline' -- shows buffers for files
@@ -115,7 +31,7 @@ return require('packer').startup(function()
   use 'chaoren/vim-wordmotion' -- camelcasemotion
   use 'cocopon/iceberg.vim'
   use 'rafamadriz/neon'
-  use 'folke/tokyonight.nvim', { 'branch': 'main' }
+  use {'folke/tokyonight.nvim', branch = 'main' }
   use 'ku-s-h/summerfruit256.vim'
   use 'kana/vim-textobj-user' -- Add new textobjects easily
   use 'wellle/targets.vim' -- more text objects, enables stuff like ci, or ci/
@@ -128,7 +44,11 @@ return require('packer').startup(function()
   use 'jremmen/vim-ripgrep'
   use 'dhruvasagar/vim-table-mode'
   use 'godlygeek/tabular'
-  use 'kevinhwang91/nvim-bqf'
+  use {'kevinhwang91/nvim-bqf', ft = 'qf'}
+  use {'junegunn/fzf', run = function()
+    vim.fn['fzf#install']()
+  end
+  }
   use 'vim-pandoc/vim-pandoc-syntax'
   use 'vim-pandoc/vim-pandoc'
   use 'vim-pandoc/vim-rmarkdown'
@@ -139,7 +59,7 @@ return require('packer').startup(function()
   use 'nvim-lua/plenary.nvim'
   use 'nvim-telescope/telescope.nvim'
   use 'lewis6991/gitsigns.nvim'
-  use 'earthly/earthly.vim', { 'branch': 'main' }
+  use {'earthly/earthly.vim', branch = 'main' }
   use 'hashivim/vim-hashicorp-tools'
   use 'alker0/chezmoi.vim'
   use 'neovim/nvim-lspconfig'
@@ -148,66 +68,67 @@ return require('packer').startup(function()
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-cmdline'
-  use 'hrsh7th/nvim-cmp'
-  use 'zbirenbaum/copilot.lua'
-  use 'zbirenbaum/copilot-cmp'
--- For vsnip users.
+  use 'petertriho/cmp-git'
+  use 'hrsh7th/cmp-nvim-lsp-document-symbol'
+  use 'cmp-nvim-lsp-signature-help'
+  use 'ray-x/cmp-treesitter'
+  use 'hrsh7th/cmp-path'
+  use "rafamadriz/friendly-snippets"
+  use {
+    "hrsh7th/nvim-cmp",
+    branch = "dev", --float menu
+    after = "friendly-snippets",
+  }
+  use 'github/copilot.vim'
   use 'hrsh7th/cmp-vsnip'
   use 'hrsh7th/vim-vsnip'
-  use 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}  -- We recommend updating the parsers on update
-  use 'folke/trouble.nvim'
+  use {
+    'nvim-treesitter/nvim-treesitter',
+    run = ':TSUpdate',
+    config = function()
+    require'nvim-treesitter.configs'.setup {
+        ensure_installed = "maintained",
+        sync_install = false,
+        highlight = {
+            enable = true,
+            additional_vim_regex_highlighting = false,
+        },
+        indent = {
+            enable = true
+        }
+    }
+    end
+
+  }
+  use {
+  "folke/trouble.nvim",
+  requires = "kyazdani42/nvim-web-devicons",
+  config = function()
+    require("trouble").setup {
+      mode = "document_diagnostics",
+      height = 10,
+    }
+  end
+  }
   use 'mattn/emmet-vim'
-  use 'jose-elias-alvarez/null-ls.nvim'
+  use {
+  "jose-elias-alvarez/null-ls.nvim",
+  requires = "nvim-lua/plenary.nvim",
+  }
   use 'petertriho/nvim-scrollbar'
   use 'ggandor/lightspeed.nvim'
-  use 'norcalli/nvim-colorizer.lua'
-
-  -- Plugins can have dependencies on other plugins
   use {
-    'haorenW1025/completion-nvim',
-    opt = true,
-    requires = {{'hrsh7th/vim-vsnip', opt = true}, {'hrsh7th/vim-vsnip-integ', opt = true}}
+      'norcalli/nvim-colorizer.lua',
+      config = function()
+        require("colorizer").setup()
+      end
   }
 
-  -- Plugins can also depend on rocks from luarocks.org:
-  use {
-    'my/supercoolplugin',
-    rocks = {'lpeg', {'lua-cjson', version = '2.1.0'}}
-  }
-
-  -- You can specify rocks in isolation
-  use_rocks 'penlight'
-  use_rocks {'lua-resty-http', 'lpeg'}
-
-  -- Local plugins can be included
-  use '~/projects/personal/hover.nvim'
-
-  -- Plugins can have post-install/update hooks
-  use {'iamcco/markdown-preview.nvim', run = 'cd app && yarn install', cmd = 'MarkdownPreview'}
-
-  -- Post-install/update hook with neovim command
-  use { 'nvim-treesitter/nvim-treesitter', run = ':TSUpdate' }
-
-  -- Post-install/update hook with call of vimscript function with argument
-  use { 'glacambre/firenvim', run = function() vim.fn['firenvim#install'](0) end }
-
-  -- Use specific branch, dependency and run lua file after load
-  use {
-    'glepnir/galaxyline.nvim', branch = 'main', config = function() require'statusline' end,
-    requires = {'kyazdani42/nvim-web-devicons'}
-  }
-
-  -- Use dependency and run lua function after load
-  use {
-    'lewis6991/gitsigns.nvim', requires = { 'nvim-lua/plenary.nvim' },
-    config = function() require('gitsigns').setup() end
-  }
-
-  -- You can specify multiple plugins in a single call
-  use {'tjdevries/colorbuddy.vim', {'nvim-treesitter/nvim-treesitter', opt = true}}
-
-  -- You can alias plugin names
-  use {'dracula/vim', as = 'dracula'}
+  -- Automatically set up your configuration after cloning packer.nvim
+  -- Put this at the end after all plugins
+  if packer_bootstrap then
+    require('packer').sync()
+  end
 end)
 EOF
 
@@ -253,6 +174,8 @@ au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
 
 autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path "%"
 
+let g:python3_host_prog = '/usr/bin/python'
+
 " don't fuck with pasting
 set pastetoggle=<C-A-v>
 let g:wordmotion_prefix = '\'
@@ -274,7 +197,6 @@ highlight Search ctermfg=0
 " Plugin Configuration {{{
 
 lua << EOF
-require('Comment').setup()
 
 
 require("scrollbar").setup()
@@ -319,10 +241,6 @@ null_ls.setup({
     sources = sources,
 })
 
-require("trouble").setup {
-    mode = "document_diagnostics",
-    height = 10,
-    }
 
 vim.diagnostic.config({
 virtual_text = {
@@ -338,29 +256,16 @@ end,
 
 EOF
 
-lua require'colorizer'.setup()
 
 " TreeSitter {{{
 lua <<EOF
-require'nvim-treesitter.configs'.setup {
-    ensure_installed = "maintained",
-    sync_install = false,
-    highlight = {
-        enable = true,
-        additional_vim_regex_highlighting = false,
-    },
-    indent = {
-        enable = true
-    }
-}
 EOF
 " }}}
 " coq {{{
 " let g:coq_settings = {'auto_start': 'shut-up', 'keymap.jump_to_mark' : '<C-j>' }
 set completeopt=menu,menuone,noselect
-lua <<EOF
+lua << EOF
   -- Setup nvim-cmp.
-  require("copilot").setup()
   local cmp = require'cmp'
 
   cmp.setup({
@@ -383,8 +288,11 @@ lua <<EOF
     },
     sources = cmp.config.sources({
       { name = 'nvim_lsp' },
-      { name = 'copilot' },
       { name = 'vsnip' }, -- For vsnip users.
+      { name = 'treesitter' },
+      { name = 'nvim_lsp_document_symbol' },
+      { name = 'nvim_lsp_signature_help' },
+      { name = 'path' },
     }, {
       { name = 'buffer' },
     })
@@ -415,10 +323,6 @@ lua <<EOF
     })
   })
 
-  -- Setup lspconfig.
--- require("coq_3p"){
---     { src = 'copilot', short_name = 'COP', accept_key = '<C-g>' },
--- }
 require('gitsigns').setup()
 
 local lsp_installer = require("nvim-lsp-installer")
@@ -450,7 +354,6 @@ end
 -- Register a handler that will be called for all installed servers.
 -- Alternatively, you may also register handlers on specific server instances instead (see example below).
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
--- Replace <YOUR_LSP_SERVER> with each lsp server you've enabled.
 lsp_installer.on_server_ready(function(server)
     local opts = {}
     capabilities = capabilities
@@ -462,39 +365,6 @@ lsp_installer.on_server_ready(function(server)
     end
     server:setup(opts)
 end)
-
-local cmp = require('cmp')
-cmp.setup {
-  completion = {
-    autocomplete = false, -- disable auto-completion.
-  },
-}
-
-_G.vimrc = _G.vimrc or {}
-_G.vimrc.cmp = _G.vimrc.cmp or {}
-_G.vimrc.cmp.lsp = function()
-  cmp.complete({
-    config = {
-      sources = {
-        { name = 'nvim_lsp' }
-      }
-    }
-  })
-end
-_G.vimrc.cmp.snippet = function()
-  cmp.complete({
-    config = {
-      sources = {
-        { name = 'vsnip' }
-      }
-    }
-  })
-end
-
-vim.cmd([[
-  inoremap <C-x><C-o> <Cmd>lua vimrc.cmp.lsp()<CR>
-  inoremap <C-x><C-s> <Cmd>lua vimrc.cmp.snippet()<CR>
-]])
 
 local opts = { noremap=true, silent=true }
 
@@ -531,27 +401,9 @@ let g:pandoc#after#modules#enabled = ["tablemode"]
 
 " }}}
 vnoremap <leader>ca :'<,'>lua vim.lsp.buf.range_code_action()<CR>
-" ALE {{{
 nnoremap ]q :lua vim.diagnostic.goto_next()<CR>
 nnoremap [q :lua vim.diagnostic.goto_prev()<CR>
 
-let g:ale_fixers = {
-            \   '*': ['remove_trailing_lines', 'trim_whitespace'],
-            \   'javascript': ['prettier'],
-            \   'yaml': ['prettier'],
-            \   'html': ['prettier'],
-            \   'css': ['prettier'],
-            \   'sh': ['shfmt'],
-            \   'python': ['autoimport', 'black'],
-            \   'java': ['uncrustify', 'google_java_format'],
-            \   'terraform': ['terraform'],
-            \   'hcl': ['terraform'],
-            \   'pandoc': ['prettier'],
-            \   'json': ['jq'],
-            \   'haskell': ['stylish-haskell'],
-            \   'jsonc': ['jq']
-            \}
-" }}}
 " Ranger {{{
 let g:ranger_map_keys = 0
 let g:NERDTreeHijackNetrw = 0
@@ -580,11 +432,11 @@ set path +=**
 set wildmenu
 " }}}
 " Folding {{{
-set foldenable      " enable folding
-set foldlevelstart=10   " open most folds by default
-set foldnestmax=10  " 10 nested fold max
-set foldmethod=expr
-set foldexpr=nvim_treesitter#foldexpr()
+" set foldenable      " enable folding
+" set foldlevelstart=10   " open most folds by default
+" set foldnestmax=10  " 10 nested fold max
+" set foldmethod=expr
+" set foldexpr=nvim_treesitter#foldexpr()
 " }}}
 " Mappings {{{
 
@@ -624,7 +476,7 @@ nmap <S-End><BS> 
 imap <S-End><BS> 
 
 nnoremap <leader>gs :LazyGit<CR>
-command! Install :w | :source % | :PlugInstall
+command! Install :w | :source % | :PackerSync
 " Scrolling {{{
 if !&scrolloff
     set scrolloff=5 " Show next 5 lines while scrolling.
@@ -633,3 +485,4 @@ if !&sidescrolloff
     set sidescrolloff=5 " Show next 5 columns while side-scrolling.
 endif
 " }}}
+
