@@ -18,3 +18,4 @@ nnoremap <leader>h :action ContextHelp<CR>
 nnoremap gd :action GotoDeclaration<CR>
 nnoremap <leader>i :action GotoImplementation<CR>
 set ideajoin
+
