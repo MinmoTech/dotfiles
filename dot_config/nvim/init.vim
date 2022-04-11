@@ -486,4 +486,3 @@ if !&sidescrolloff
     set sidescrolloff=5 " Show next 5 columns while side-scrolling.
 endif
 " }}}
-
