@@ -155,6 +155,9 @@ let mapleader="\<SPACE>"
 
 vmap <C-c> cp
 
+imap <silent><script><expr> <C-G> copilot#Accept("\<CR>")
+let g:copilot_no_tab_map = v:true
+
 
 " au BufNewFile,BufRead *.py set foldmethod=indent
 au BufRead,BufNewFile playbook*.yml set filetype=yaml.ansible
