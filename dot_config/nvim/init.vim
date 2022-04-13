@@ -75,7 +75,6 @@ return require('packer').startup(function(use)
   use "rafamadriz/friendly-snippets"
   use {
     "hrsh7th/nvim-cmp",
-    after = "friendly-snippets",
   }
   use 'github/copilot.vim'
   use 'hrsh7th/cmp-vsnip'
