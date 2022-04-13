@@ -75,7 +75,6 @@ return require('packer').startup(function(use)
   use "rafamadriz/friendly-snippets"
   use {
     "hrsh7th/nvim-cmp",
-    branch = "dev", --float menu
     after = "friendly-snippets",
   }
   use 'github/copilot.vim'
@@ -86,7 +85,7 @@ return require('packer').startup(function(use)
     run = ':TSUpdate',
     config = function()
     require'nvim-treesitter.configs'.setup {
-        ensure_installed = "maintained",
+        ensure_installed = "all",
         sync_install = false,
         highlight = {
             enable = true,
