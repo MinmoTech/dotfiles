@@ -67,7 +67,6 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-nvim-lsp'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-cmdline'
-  use 'petertriho/cmp-git'
   use 'hrsh7th/cmp-nvim-lsp-document-symbol'
   use 'cmp-nvim-lsp-signature-help'
   use 'ray-x/cmp-treesitter'
