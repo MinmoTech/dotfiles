@@ -68,7 +68,7 @@ return require('packer').startup(function(use)
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-cmdline'
   use 'hrsh7th/cmp-nvim-lsp-document-symbol'
-  use 'cmp-nvim-lsp-signature-help'
+  use 'hrsh7th/cmp-nvim-lsp-signature-help'
   use 'ray-x/cmp-treesitter'
   use 'hrsh7th/cmp-path'
   use "rafamadriz/friendly-snippets"
@@ -96,6 +96,7 @@ return require('packer').startup(function(use)
     end
 
   }
+  use 'haringsrob/nvim_context_vt'
   use {
   "folke/trouble.nvim",
   requires = "kyazdani42/nvim-web-devicons",
