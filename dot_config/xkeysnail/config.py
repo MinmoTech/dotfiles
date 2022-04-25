@@ -15,6 +15,7 @@ define_keymap(
     not in (
         "Emacs",
         "Zathura",
+        "ffxiv_dx11.exe",
     ),
     {
         K("C-Shift-dot"): K("C-TAB"),
