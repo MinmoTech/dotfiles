@@ -51,7 +51,8 @@ emote &
 # /opt/piavpn/bin/pia-client &
 # /home/julius/Programs/position_pia.sh &
 
-xkeysnail --watch ~/.config/xkeysnail/config.py 2>&1 | tee /tmp/xkeysnail.log &
+sleep 10s && \
+    xkeysnail --watch ~/.config/xkeysnail/config.py 2>&1 | tee /tmp/xkeysnail.log &
 sleep 10s && \
     if [[ $(hostname) == "mobilus" ]]
     then
