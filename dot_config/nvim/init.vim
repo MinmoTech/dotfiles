@@ -225,9 +225,9 @@ local sources = {
     null_ls.builtins.diagnostics.flake8.with({
         prefer_local = ".venv/bin",
     }),
-    null_ls.builtins.diagnostics.mypy.with({
-        prefer_local = ".venv/bin",
-    }),
+    -- null_ls.builtins.diagnostics.mypy.with({
+    --     prefer_local = ".venv/bin",
+    -- }),
     null_ls.builtins.diagnostics.ktlint,
     null_ls.builtins.diagnostics.shellcheck,
     null_ls.builtins.diagnostics.hadolint,
