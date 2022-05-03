@@ -28,7 +28,7 @@ set GOROOT '/home/julius/.go'
 set GOPATH /home/julius/go
 set PYPATH '/home/julius/.local/bin'
 set PATH $GOPATH/bin $GOROOT/bin $PYPATH /home/julius/.cargo/bin $PATH
-source /opt/anaconda/etc/fish/conf.d/conda.fish
+# source /opt/anaconda/etc/fish/conf.d/conda.fish
 status is-login; and pyenv init --path | source
 status is-interactive; and pyenv init - | source
 direnv hook fish | source
