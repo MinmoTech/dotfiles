@@ -174,6 +174,8 @@ au BufNewFile,BufRead /dev/shm/gopass.* setlocal noswapfile nobackup noundofile
 
 autocmd BufWritePost ~/.local/share/chezmoi/* ! chezmoi apply --source-path "%"
 
+autocmd BufRead,BufNewFile */build.gradle.kts lua vim.diagnostic.disable(0)
+
 let g:python3_host_prog = '/usr/bin/python'
 
 " don't fuck with pasting
