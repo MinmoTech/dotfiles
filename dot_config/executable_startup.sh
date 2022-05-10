@@ -9,7 +9,7 @@ keynav &
 # picom --backend glx --daemon --vsync --no-fading-openclose --use-ewmh-active-win --vsync-use-glfinish --unredir-if-possible
 if [[ $(hostname) == "mobilus" ]]
 then
-    picom --vsync --backend xr_glx_hybrid --vsync-use-glfinish --daemon --no-fading-openclose &
+    picom --vsync --backend xrender --vsync-use-glfinish --daemon --no-fading-openclose &
 else
     picom --daemon --no-fading-openclose &
 feh --randomize --bg-fill --no-xinerama ~/Pictures/wallpapers/* &
