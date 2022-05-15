@@ -186,7 +186,6 @@ let g:airline#extensions#tabline#enabled = 1
 let g:html_indent_style1 = 'inc'
 set virtualedit=block
 
-nnoremap <C-LeftMouse> <4-LeftMouse>
 
 set scrollback=100000
 " }}}
