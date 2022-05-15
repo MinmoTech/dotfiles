@@ -472,6 +472,7 @@ nnoremap <leader>6 :b term<cr>
 
 " Use Ctrl D to delete the next char
 imap <C-d> <Del>
+cmap <C-d> <Del>
 " Dedent with C-M-d instead
 inoremap <C-S-d> <C-d>
 
