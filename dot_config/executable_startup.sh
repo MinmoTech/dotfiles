@@ -7,11 +7,6 @@ keynav &
 # picom --backend glx --daemon --vsync --no-fading-openclose --use-ewmh-active-win
 # picom --backend xr_glx_hybrid --daemon --shadow --vsync --no-fading-openclose --use-ewmh-active-win --vsync-use-glfinish --unredir-if-possible
 # picom --backend glx --daemon --vsync --no-fading-openclose --use-ewmh-active-win --vsync-use-glfinish --unredir-if-possible
-if [[ $(hostname) == "mobilus" ]]
-then
-    picom --vsync --backend xrender --vsync-use-glfinish --daemon --no-fading-openclose &
-else
-    picom --daemon --no-fading-openclose &
 feh --randomize --bg-fill --no-xinerama ~/Pictures/wallpapers/* &
 # ~/Programs/notify-low-battery.sh &
 # nextcloud &
@@ -62,4 +57,9 @@ chia start farmer &
 sleep 60 && ksnip &
 sleep 60 && libinput-gestures-setup start &
 pactl load-module module-null-sink media.class=Audio/Sink sink_name=combine channel_map=stereo &
+if test "$(hostname)" = "mobilus" ; then
+    picom --vsync --backend xrender --vsync-use-glfinish --daemon --no-fading-openclose &
+else
+    picom --daemon --no-fading-openclose &
+fi
 # xfsettingsd &
