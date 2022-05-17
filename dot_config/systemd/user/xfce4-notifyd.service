@@ -1,0 +1,11 @@
+[Unit]
+Description=XFCE notifications service
+
+[Service]
+Type=dbus
+BusName=org.freedesktop.Notifications
+Environment=DISPLAY=:0.0
+ExecStart=/usr/lib/xfce4/notifyd/xfce4-notifyd
+
+[Install]
+WantedBy=default.target
