@@ -96,6 +96,42 @@ return require('packer').startup(function(use)
     end
 
   }
+  use {
+    'JoseConseco/iswap.nvim',
+    config = function()
+      require('iswap').setup{
+        -- The keys that will be used as a selection, in order
+        -- ('asdfghjklqwertyuiopzxcvbnm' by default)
+        keys = 'qwertyuiop',
+
+        -- Grey out the rest of the text when making a selection
+        -- (enabled by default)
+        grey = 'disable',
+
+        -- Highlight group for the sniping value (asdf etc.)
+        -- default 'Search'
+        hl_snipe = 'ErrorMsg',
+
+        -- Highlight group for the visual selection of terms
+        -- default 'Visual'
+        hl_selection = 'WarningMsg',
+
+        -- Highlight group for the greyed background
+        -- default 'Comment'
+        hl_grey = 'LineNr',
+
+        -- Automatically swap with only two arguments
+        -- default nil
+        autoswap = true,
+
+        -- Other default options you probably should not change:
+        debug = nil,
+        hl_grey_priority = '1000',
+      }
+      vim.api.nvim_set_keymap('n', '<m-n>', "<cmd>ISwapCursorNodeLeft<CR>", {noremap = true, silent = true}) -- move cursor node right
+      vim.api.nvim_set_keymap('n', '<m-m>', "<cmd>ISwapCursorNodeRight<CR>", {noremap = true, silent = true}) -- move cursor node left
+    end
+   }
   -- use 'haringsrob/nvim_context_vt'
   use {
   "folke/trouble.nvim",
