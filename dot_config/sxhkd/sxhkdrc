@@ -148,7 +148,7 @@ super + c
 super + alt + c
 	jumpapp firefox
 super + shift + c
-    jumpapp -c "Chromium-browser" "flatpak run com.github.Eloston.UngoogledChromium" || wmctrl -a chromium
+    jumpapp -c "Chromium-browser" com.github.Eloston.UngoogledChromium || wmctrl -a chromium
 super + v
 	jumpapp discord || wmctrl -a discord || flatpak run com.discordapp.Discord
 alt + ctrl + u
