@@ -72,7 +72,21 @@ return require('packer').startup(function(use)
   use 'ray-x/cmp-treesitter'
   use 'hrsh7th/cmp-path'
   use "rafamadriz/friendly-snippets"
-  use "ghillb/cybu.nvim"
+  use {
+    "ghillb/cybu.nvim",
+    branch = "v1.x", -- won't receive breaking changes
+    -- branch = "main", -- timely updates
+    requires = { "kyazdani42/nvim-web-devicons" }, --optional
+    config = function()
+      local ok, cybu = pcall(require, "cybu")
+      if not ok then
+        return
+      end
+      cybu.setup()
+      vim.keymap.set("n", "<A-h>", "<Plug>(CybuPrev)")
+      vim.keymap.set("n", "<A-l>", "<Plug>(CybuNext)")
+    end,
+  }
   use {
     "hrsh7th/nvim-cmp",
   }
@@ -486,8 +500,8 @@ set wildmenu
 " Mappings {{{
 
 " buffer navigation
-nnoremap <A-l> :bnext<CR>
-nnoremap <A-h> :bprevious<CR>
+" nnoremap <A-l> :bnext<CR>
+" nnoremap <A-h> :bprevious<CR>
 " toggle undotree
 nnoremap <leader>u :UndotreeToggle<CR>
 " Use Q to execute default register.
