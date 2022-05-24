@@ -72,6 +72,7 @@ return require('packer').startup(function(use)
   use 'ray-x/cmp-treesitter'
   use 'hrsh7th/cmp-path'
   use "rafamadriz/friendly-snippets"
+  use "ghillb/cybu.nvim"
   use {
     "hrsh7th/nvim-cmp",
   }
