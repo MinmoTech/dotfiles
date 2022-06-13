@@ -14,3 +14,29 @@ directory_name_encryption = true
 password = {{ gopass "keys/rclone/password" }}
 password2 = {{ gopass "keys/rclone/password2" }}
 
+[filebase]
+type = s3
+provider = Other
+env_auth = false
+access_key_id = EDC3CB3FF824790AE12E
+secret_access_key = q822kmLoMzV46VGForFcrUKKS0HFsdfWeZCEtBWG
+region = us-east-1
+endpoint = https://s3.filebase.com
+
+[filebase_migaku]
+type = s3
+provider = Other
+env_auth = false
+access_key_id = B8FB1830259277B0383D
+secret_access_key = Rg7vNQB2MPGEzLfdKZsEbVTiTjAmXZEznEUrimle
+region = us-east-1
+endpoint = https://s3.filebase.com
+
+[storj_migaku]
+type = s3
+provider = Storj
+access_key_id = jwmkxvkfelqisy6633mbatb3yyzq
+secret_access_key = j2gdjvn74wvpihxkyhr2aw5kg4s3k7ignlu4c3ihz5xalyneycko4
+endpoint = https://gateway.storjshare.io
+bucket_acl = public-read
+
